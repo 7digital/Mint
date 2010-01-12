@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Project ToolsVersion="2.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <UsingTask
+		TaskName		= "SevenDigital.Tools.DependencyManager.MSBuildTasks.ConflictReportTask"
+		AssemblyFile	= "bin\Debug\SevenDigital.Tools.DependencyManager.MSBuildTasks.dll"
+	/>
+
+  <ItemGroup>
+    <Assemblies Include="..\SevenDigital.Tools.DependencyManager.RakeTasks\bin\SampleAssemblies\SevenDigital.TestAssembly.dll" />
+    <Assemblies Include="..\SevenDigital.Tools.DependencyManager.RakeTasks\bin\SampleAssemblies\SevenDigital.TestAssembly2.dll" />
+  </ItemGroup>
+  
+  <Target Name="ConflictReport">
+    <ConflictReportTask
+      AssemblyPaths ="@(Assemblies)"
+		/>
+  </Target>
+</Project>
