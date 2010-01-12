@@ -7,7 +7,7 @@ class DependencyConflictTests < Test::Unit::TestCase
 
 		conflict = instance.run(COMMAND_REPORT, ASS_NAME)
 
-		assert_equal(0, conflict.exit_status)
+		assert_equal(0, conflict.exit_status, "Expected exit status of 0. Message: #{conflict.text}")
 
 		assert_contains(conflict.text, "References: 			SevenDigital.GeneralFunctions")
 		assert_contains(conflict.text, "Reference Version: 		1.1.1.1")
@@ -19,7 +19,7 @@ class DependencyConflictTests < Test::Unit::TestCase
 
 		conflict = instance.run(COMMAND_REPORT, NO_CONFLICT_NAME)
 
-		assert_equal(0, conflict.exit_status)
+		assert_equal(0, conflict.exit_status, "Expected exit status of 0. Message: #{conflict.text}")
 		assert_not_contains("is referencing assembly",conflict.text)
 end
 private
