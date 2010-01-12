@@ -9,7 +9,7 @@
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SevenDigital.Tools.DependencyManager</RootNamespace>
-    <AssemblyName>chubbyrain</AssemblyName>
+    <AssemblyName>SevenDigital.Tools.DependencyManager</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <PublishUrl>http://localhost/SevenDigital.Tools.DependencyManager/</PublishUrl>
