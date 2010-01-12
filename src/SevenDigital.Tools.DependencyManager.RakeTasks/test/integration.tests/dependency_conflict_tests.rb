@@ -9,10 +9,9 @@ class DependencyConflictTests < Test::Unit::TestCase
 
 		assert_equal(0, conflict.exit_status)
 
-		assert_contains(conflict.text, "SevenDigital.MediaManager2 is referencing assembly SevenDigital.GeneralFunctions")
-		assert_contains(conflict.text, "SevenDigital.Domain.CMS is referencing assembly SevenDigital.Domain.Catalogue")
-		assert_contains(conflict.text, "SevenDigital.Domain.CMS is referencing assembly SevenDigital.Core")
-		assert_contains(conflict.text, "SevenDigital.Domain.CMS is referencing assembly SevenDigital.GeneralFunctions")
+		assert_contains(conflict.text, "References: 			SevenDigital.GeneralFunctions")
+		assert_contains(conflict.text, "Reference Version: 		1.1.1.1")
+		assert_contains(conflict.text, "Actual Reference Version: 	1.1.2.31547")
   end
 
  def test_that_there_are_no_conflicts

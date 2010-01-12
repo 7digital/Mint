@@ -4,8 +4,8 @@ require 'chubby_rain'
 include Rake
 
 class DependencyReportTasks < TaskLib
-	def initialize(executable, working_directory)
-		@executable        = executable
+	def initialize(working_directory)
+		@executable        = File.expand_path(File.dirname(__FILE__) + '/../bin/chubbyrain.exe')
 		@working_directory = working_directory
 
 		yield self if block_given?
@@ -53,8 +53,8 @@ class DependencyReportTasks < TaskLib
 
             # TODO: Parse the result into conflict set and assert based on those
 
-            if (result.text.include?('Actual Reference Version')) then
-	            fail_task("There seems to be a dependency issue. #{result.text}")
+            if (result.text.include?('Actual Reference Version:')) then
+	            fail_task("There seems to be a dependency issue.")
 	        end
         end
 	end
@@ -83,7 +83,7 @@ class DependencyReportTasks < TaskLib
 	end
 
 	class Commands
-		REPORT     = 'report'
-		CONFLICT    = 'conflict'
+		REPORT = 'report'
+		CONFLICT = 'conflict'
 	end
 end
