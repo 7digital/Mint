@@ -1,11 +1,11 @@
 require 'rake'
 require 'rake/tasklib'
-require 'chubby_rain'
+require File.dirname(__FILE__) + '/chubby_rain'
 include Rake
 
 class DependencyReportTasks < TaskLib
 	def initialize(working_directory)
-		@executable        = File.expand_path(File.dirname(__FILE__) + '/../bin/chubbyrain.exe')
+		@executable        = File.expand_path(File.dirname(__FILE__) + '/../../bin/chubbyrain.exe')
 		@working_directory = working_directory
 
 		yield self if block_given?
