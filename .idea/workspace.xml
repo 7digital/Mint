@@ -54,7 +54,7 @@
       <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SevenDigital.Tools.DependencyManager.RakeTasks/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="5" selection-start="10" selection-end="10" vertical-scroll-proportion="0.028192371">
+            <state line="2" column="5" selection-start="16" selection-end="16" vertical-scroll-proportion="0.056384742">
               <folding />
             </state>
           </provider>
@@ -340,7 +340,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SevenDigital.Tools.DependencyManager.RakeTasks/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="5" selection-start="10" selection-end="10" vertical-scroll-proportion="0.028192371">
+        <state line="2" column="5" selection-start="16" selection-end="16" vertical-scroll-proportion="0.056384742">
           <folding />
         </state>
       </provider>
