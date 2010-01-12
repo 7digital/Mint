@@ -7,7 +7,7 @@ using Rhino.Mocks;
 namespace SevenDigital.Tools.DependencyManager.MSBuildTasks.Unit.Tests {
 	[TestFixture]
 	public class ConflictReportTaskTests {
-		private const string ASSEMBLY_NAME = "SevenDigital.TestAssembly";
+		private const string ASSEMBLY_NAME = "SevenDigital.A";
 		private String _workingDirectory = Path.GetFullPath("lib/SampleAssemblies");
 
 	    private String _assemblyPathWithConflicts;
@@ -132,7 +132,7 @@ namespace SevenDigital.Tools.DependencyManager.MSBuildTasks.Unit.Tests {
 		}
 
 		private void Given_a_working_directory_containing_conflicted_assemblies() {
-			_workingDirectory = Path.GetFullPath("lib/1.2.121");
+			_workingDirectory = Path.GetFullPath("lib/SampleAssemblies");
 		}
 
 		private ConflictReportTask NewTask() {

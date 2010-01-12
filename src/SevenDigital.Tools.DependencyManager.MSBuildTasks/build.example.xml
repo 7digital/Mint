@@ -6,8 +6,8 @@
 	/>
 
   <ItemGroup>
-    <Assemblies Include="..\SevenDigital.Tools.DependencyManager.RakeTasks\bin\SampleAssemblies\SevenDigital.TestAssembly.dll" />
-    <Assemblies Include="..\SevenDigital.Tools.DependencyManager.RakeTasks\bin\SampleAssemblies\SevenDigital.TestAssembly2.dll" />
+    <Assemblies Include="..\SevenDigital.Tools.DependencyManager.RakeTasks\bin\SampleAssemblies\SevenDigital.A.dll" />
+    <Assemblies Include="..\SevenDigital.Tools.DependencyManager.RakeTasks\bin\SampleAssemblies\SevenDigital.B.dll" />
   </ItemGroup>
   
   <Target Name="ConflictReport">
