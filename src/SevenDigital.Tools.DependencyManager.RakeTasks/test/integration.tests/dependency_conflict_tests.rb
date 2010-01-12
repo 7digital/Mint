@@ -40,9 +40,9 @@ def assert_not_contains(text,what)
 end
 
 	ANY_PATH_THAT_DOES_NOT_EXIST = 'c:\does-not-exist'
-	EXE_PATH            = File.dirname(__FILE__) + '/../../../SevenDigital.Tools.DependencyManager/bin/Debug/chubbyrain.exe'
+	EXE_PATH            = File.expand_path(File.dirname(__FILE__) + '/../../src/bin/chubbyrain.exe')
 	COMMAND_REPORT      = 'conflict'
-	WORKING_DIR         = File.dirname(__FILE__) + '/../../bin/1.2.121/'
+	WORKING_DIR         = File.expand_path(File.dirname(__FILE__) + '/../../src/bin')
 	ASS_NAME            = 'Sevendigital.Domain.User.dll'
   	NO_CONFLICT_NAME    = 'Sevendigital.Test.log4net.dll'
 	CHUBBY_BAT_DLL      = 'Chubby.Bat.dll'
