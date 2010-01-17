@@ -9,9 +9,10 @@ class DependencyConflictTests < Test::Unit::TestCase
 
 		assert_equal(0, conflict.exit_status, "Expected exit status of 0. Message: #{conflict.text}")
 
-		assert_contains(conflict.text, "References: 			SevenDigital.GeneralFunctions")
-		assert_contains(conflict.text, "Reference Version: 		1.1.1.1")
-		assert_contains(conflict.text, "Actual Reference Version: 	1.1.2.31547")
+		assert_contains(conflict.text, "Major Revision Conflict")
+		assert_contains(conflict.text, "References: 			SevenDigital.B")
+		assert_contains(conflict.text, "Reference Version: 		1.0.0.0")
+		assert_contains(conflict.text, "Actual Reference Version: 	1.5.0.0")
   end
 
  def test_that_there_are_no_conflicts
@@ -41,9 +42,9 @@ end
 	ANY_PATH_THAT_DOES_NOT_EXIST = 'c:\does-not-exist'
 	EXE_PATH            = File.expand_path(File.dirname(__FILE__) + '/../../src/bin/chubbyrain.exe')
 	COMMAND_REPORT      = 'conflict'
-	WORKING_DIR         = File.expand_path(File.dirname(__FILE__) + '/../../src/bin')
-	ASS_NAME            = 'Sevendigital.Domain.User.dll'
-  	NO_CONFLICT_NAME    = 'Sevendigital.Test.log4net.dll'
+	WORKING_DIR         = File.expand_path(File.dirname(__FILE__) + '/SampleAssemblies/')
+	ASS_NAME            = 'Sevendigital.A.dll'
+  	NO_CONFLICT_NAME    = 'Sevendigital.B.dll'
 	CHUBBY_BAT_DLL      = 'Chubby.Bat.dll'
 
 end

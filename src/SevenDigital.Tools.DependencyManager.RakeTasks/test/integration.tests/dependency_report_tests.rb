@@ -90,10 +90,9 @@ class DependencyReportTests < Test::Unit::TestCase
 	end
 
 	ANY_PATH_THAT_DOES_NOT_EXIST = 'c:\does-not-exist'
-	EXE_PATH        = File.dirname(__FILE__) + '/../../../SevenDigital.Tools.DependencyManager/bin/Debug/chubbyrain.exe'
+	EXE_PATH        = File.expand_path(File.dirname(__FILE__) + '/../../src/bin/chubbyrain.exe')
 	COMMAND_REPORT  = 'report'
-	WORKING_DIR     = File.dirname(__FILE__) + '/../../bin/1.2.121/'
-	ASS_NAME        = 'Sevendigital.Domain.User.dll'
+	WORKING_DIR     = File.expand_path(File.dirname(__FILE__) + '/SampleAssemblies/')
+	ASS_NAME        = 'Sevendigital.A.dll'
 	CHUBBY_BAT_DLL  = 'Chubby.Bat.dll'
-	
 end
