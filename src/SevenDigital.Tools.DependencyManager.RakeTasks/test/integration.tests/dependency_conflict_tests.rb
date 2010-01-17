@@ -2,6 +2,7 @@ require "test/unit"
 require File.dirname(__FILE__) + '/../../src/lib/chubby_rain'
 
 class DependencyConflictTests < Test::Unit::TestCase
+	
   def test_that_a_conflict_is_returned
 		instance = ChubbyRain.new(EXE_PATH, WORKING_DIR)
 
@@ -48,3 +49,4 @@ end
 	CHUBBY_BAT_DLL      = 'Chubby.Bat.dll'
 
 end
+
