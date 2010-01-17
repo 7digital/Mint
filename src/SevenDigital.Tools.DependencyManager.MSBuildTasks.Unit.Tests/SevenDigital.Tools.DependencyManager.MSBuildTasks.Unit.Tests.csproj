@@ -72,7 +72,24 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="lib\SampleAssemblies\" />
+    <Content Include="lib\SampleAssemblies\AssemblyToIgnore.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lib\SampleAssemblies\SevenDigital.A.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lib\SampleAssemblies\SevenDigital.B.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lib\SampleAssemblies\SevenDigital.C.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lib\SampleAssemblies\SevenDigital.D.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lib\SampleAssemblies\SevenDigital.E.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -71,7 +71,7 @@ namespace SevenDigital.Tools.DependencyManager.Unit.Tests {
 
 
 		[Test]
-		public void AnalyseAssembly_returns_correct_dependency_count_2()
+		public void AnalyseAssembly_returns_correct_dependency_count_for_AssemblyB()
 		{
 			var dependencyReporter = new DependencyFinder(_assemblyLoader, PATH);
 
@@ -83,7 +83,7 @@ namespace SevenDigital.Tools.DependencyManager.Unit.Tests {
 		}
 
 		[Test]
-		public void AnalyseAssembly_returns_correct_dependency_count_3()
+		public void AnalyseAssembly_returns_correct_dependency_count_for_AssemblyC()
 		{
 			var dependencyReporter = new DependencyFinder(_assemblyLoader, PATH);
 
@@ -93,7 +93,7 @@ namespace SevenDigital.Tools.DependencyManager.Unit.Tests {
 		}
 
 		[Test]
-		public void AnalyseAssembly_returns_correct_dependency_count_4()
+		public void AnalyseAssembly_returns_correct_dependency_count_for_AssemblyE()
 		{
 			var dependencyReporter = new DependencyFinder(_assemblyLoader, PATH);
 
