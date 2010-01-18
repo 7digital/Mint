@@ -16,7 +16,7 @@ class ChubbyRain
 		puts "#{File.expand_path(executable)} #{command} #{File.expand_path(working_directory)} #{assembly_name}"
 
 		stdout_result = %x{
-			#{File.expand_path(executable)} #{command} #{File.expand_path(working_directory)} #{assembly_name}
+			#{File.expand_path(executable)} #{command} "#{File.expand_path(working_directory)}" "#{assembly_name}"
 		}
 
 		ProcessResult.new($?.exitstatus, stdout_result)
