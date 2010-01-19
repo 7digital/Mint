@@ -74,13 +74,13 @@ namespace SevenDigital.Tools.DependencyManager.MSBuildTasks.Unit.Tests {
             );
         }
 
-		[Test]
-		public void Given_a_working_directory_containing_conflicted_assemblies_then_execute_returns_true_because_the_task_is_a_report() {
+	    [Test] public void
+	        Given_a_working_directory_containing_conflicted_assemblies_then_execute_returns_false() {
 			Given_a_working_directory_containing_conflicted_assemblies();
 
 			var theTask = NewTask();
 
-			Assert.True(
+			Assert.False(
 				theTask.Execute(), 
 				"Expected false to be returned because the assembly <{0}> has conflicts.", 
 				ASSEMBLY_NAME

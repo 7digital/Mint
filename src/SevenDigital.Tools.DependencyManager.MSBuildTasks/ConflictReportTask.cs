@@ -11,6 +11,7 @@ using SevenDigital.Tools.DependencyManager.Views;
 namespace SevenDigital.Tools.DependencyManager.MSBuildTasks {
 	public class ConflictReportTask : ITask {
 		public bool Execute() {
+		    bool noConflictsFound = true;
 		    foreach (var assemblyPath in AssemblyPaths) {
                 RequireProperties(assemblyPath);
 
@@ -21,6 +22,8 @@ namespace SevenDigital.Tools.DependencyManager.MSBuildTasks {
 
                 if (dependencyReport.HasConflicts)
                 {
+                    noConflictsFound = false;
+
                     BuildEngine.LogErrorEvent(
                         NewError("*** The assembly <{0}> has <{1}> reference conflicts ***",
                             GetAssemblyName(assemblyPath),
@@ -31,9 +34,8 @@ namespace SevenDigital.Tools.DependencyManager.MSBuildTasks {
                     Display(dependencyReport);
                 }
 		    }
-            
 
-			return true;
+		    return noConflictsFound;
 		}
 
 		private void Display(DependencyReport dependencyReport) {

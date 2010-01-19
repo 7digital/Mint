@@ -1,6 +1,11 @@
+_ReSharper.*/*
+_ReSharper.*/**/*
+*.resharper.user
 *.suo
-*.user
-_ReSharper.*
-bin
-obj
-.idea/
+*.idea/*
+src/**/obj
+src/**/obj/*
+src/**/obj/**/*
+src/**/bin
+src/**/bin/* 
+src/**/bin/**/* 
