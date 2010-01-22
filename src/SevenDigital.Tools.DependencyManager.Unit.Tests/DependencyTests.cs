@@ -16,6 +16,7 @@ namespace SevenDigital.Tools.DependencyManager.Unit.Tests {
 			Assert.That(dependency.IsConflict, Is.True, "should report a minor conflict if the version numbers are not the same");
 		}
 
+
 		[Test]
 		public void IsConflict_returns_false_for_identical_version_numbers()
 		{
