@@ -4,9 +4,11 @@ require 'chubby_rain'
 include Rake
 
 class DependencyReportTasks < TaskLib
-	def initialize(executable, working_directory)
-		@executable        = executable
-		@working_directory = working_directory
+	def initialize(options = default_options)
+		options = merge_with_defaults(options)
+
+		@executable        = options[:executable]
+		@working_directory = options[:working_directory]
 
 		yield self if block_given?
 
@@ -22,6 +24,17 @@ class DependencyReportTasks < TaskLib
 
 	private
 	attr_reader :executable, :working_directory
+
+	def merge_with_defaults(what)
+		default_options.merge(options)
+	end
+
+	def default_options
+		{
+			:executable => File.expand_path(File.dirname(__FILE__) + '/../bin/chubbyrain.exe'),
+			:working_directory => Dir.getwd
+		}
+	end
 
 	def define_info
 		desc "Configuration information for the set of tasks"
