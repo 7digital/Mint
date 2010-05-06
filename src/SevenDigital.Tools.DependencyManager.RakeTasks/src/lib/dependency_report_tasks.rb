@@ -1,12 +1,14 @@
 require 'rake'
 require 'rake/tasklib'
-require File.dirname(__FILE__) + '/chubby_rain'
+require 'chubby_rain'
 include Rake
 
 class DependencyReportTasks < TaskLib
-	def initialize(working_directory)
-		@executable        = File.expand_path(File.dirname(__FILE__) + '/../../bin/chubbyrain.exe')
-		@working_directory = working_directory
+	def initialize(options = default_options)
+		options = merge_with_defaults(options)
+
+		@executable        = options[:executable]
+		@working_directory = options[:working_directory]
 
 		yield self if block_given?
 
@@ -22,6 +24,17 @@ class DependencyReportTasks < TaskLib
 
 	private
 	attr_reader :executable, :working_directory
+
+	def merge_with_defaults(what)
+		default_options.merge(options)
+	end
+
+	def default_options
+		{
+			:executable => File.expand_path(File.dirname(__FILE__) + '/../bin/chubbyrain.exe'),
+			:working_directory => Dir.getwd
+		}
+	end
 
 	def define_info
 		desc "Configuration information for the set of tasks"
@@ -53,8 +66,8 @@ class DependencyReportTasks < TaskLib
 
             # TODO: Parse the result into conflict set and assert based on those
 
-            if (result.text.include?('Actual Reference Version:')) then
-	            fail_task("There seems to be a dependency issue.")
+            if (result.text.include?('Actual Reference Version')) then
+	            fail_task("There seems to be a dependency issue. #{result.text}")
 	        end
         end
 	end
@@ -83,7 +96,7 @@ class DependencyReportTasks < TaskLib
 	end
 
 	class Commands
-		REPORT = 'report'
-		CONFLICT = 'conflict'
+		REPORT     = 'report'
+		CONFLICT    = 'conflict'
 	end
 end
