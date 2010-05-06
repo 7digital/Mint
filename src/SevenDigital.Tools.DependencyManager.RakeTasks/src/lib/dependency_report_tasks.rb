@@ -26,7 +26,7 @@ class DependencyReportTasks < TaskLib
 	attr_reader :executable, :working_directory
 
 	def merge_with_defaults(what)
-		default_options.merge(options)
+		default_options.merge(what)
 	end
 
 	def default_options
