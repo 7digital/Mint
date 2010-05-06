@@ -3,6 +3,7 @@ _ReSharper.*/**/*
 *.resharper.user
 *.suo
 *.idea/*
+*.idea/**/*
 src/**/obj
 src/**/obj/*
 src/**/obj/**/*
