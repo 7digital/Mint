@@ -3,4 +3,5 @@
 _ReSharper.*
 bin
 obj
+.idea/
 .idea/**/*
