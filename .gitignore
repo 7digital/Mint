@@ -4,4 +4,4 @@ _ReSharper.*
 bin
 obj
 .idea/
-.idea/*.xml
+.idea/**/*
