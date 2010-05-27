@@ -21,9 +21,8 @@ end
 option_parser = OptionParser.new do |opts|
 	opts.banner = "mint [file] [options]"
   	opts.separator ""
-  	opts.separator "Options are ..."
+  	opts.separator ""
 
-  	# Add the command on_tail, to make it appear as the last option in the list.
   	opts.on_tail("-h", "--help", "-H", "Display this help message.") do
     	puts opts
     	exit
@@ -54,6 +53,6 @@ chubby_rain = ChubbyRain.new(
 	Dir.pwd
 )
 
-result = chubby_rain.run('report', options.file)
+result = chubby_rain.run(options.command || 'report', options.file)
 
 puts result.text
