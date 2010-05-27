@@ -1,5 +1,59 @@
+#!/usr/bin/env ruby
 require 'rubygems'
-require 'mint'
 require 'optparse'
+require 'mint'
+require File.dirname(__FILE__) + '/../lib/chubby_rain.rb'
 
-puts "Welcome"
+def options
+  @options ||= OpenStruct.new
+end
+
+def program_options
+	[
+	  	# [long_option, short_option and parameter, description, code to execute]
+  		[
+			'--command', '-c command', "One of: report, conflict",
+	  		lambda { |value| options.command = value }
+	  	]
+  	]
+end
+
+option_parser = OptionParser.new do |opts|
+	opts.banner = "mint [file] [options]"
+  	opts.separator ""
+  	opts.separator "Options are ..."
+
+  	# Add the command on_tail, to make it appear as the last option in the list.
+  	opts.on_tail("-h", "--help", "-H", "Display this help message.") do
+    	puts opts
+    	exit
+  	end
+
+  	program_options.each { |args| opts.on(*args) }
+end
+
+options.file = ARGV.first
+
+begin
+	# Parse the options and remove them from the ARGV array
+  	option_parser.parse!
+rescue OptionParser::ParseError => error
+  	puts error.message
+  	puts option_parser
+  	exit
+end
+
+unless options.file
+  puts 'Missing file'
+  puts option_parser
+  exit
+end
+
+chubby_rain = ChubbyRain.new(
+	File.expand_path("#{File.dirname(__FILE__)}/chubbyrain.exe"),
+	Dir.pwd
+)
+
+result = chubby_rain.run('report', options.file)
+
+puts result.text
