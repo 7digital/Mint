@@ -13,8 +13,6 @@ class ChubbyRain
 
 		raise ArgumentError.new("No assembly supplied") if assembly_name.nil?
 
-		puts "#{File.expand_path(executable)} #{command} #{File.expand_path(working_directory)} #{assembly_name}"
-
 		stdout_result = %x{
 			#{File.expand_path(executable)} #{command} "#{File.expand_path(working_directory)}" "#{assembly_name}"
 		}
