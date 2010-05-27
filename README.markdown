@@ -1,3 +1,28 @@
+Mint gem
+=====================
+
+## Usage ##
+
+    mint SevenDigital.A.dll
+
+Produces a conflict report:
+
+    ------------------------------------------
+    Count of assemblies referenced
+    ------------------------------------------
+    SevenDigital.B_1.0.0.0                            1
+    SevenDigital.C_1.0.0.0                            2
+    SevenDigital.E_1.0.0.0                            3
+    SevenDigital.D_1.0.0.0                            1
+    ------------------------------------------
+    Incorrect Dependencies Summary
+    ------------------------------------------
+    ***** Major Revision Conflict *****
+    SevenDigital.A
+    References:                     SevenDigital.B
+    Reference Version:              1.0.0.0
+    Actual Reference Version:       1.5.0.0
+
 Mint rake tasks
 =====================
 
