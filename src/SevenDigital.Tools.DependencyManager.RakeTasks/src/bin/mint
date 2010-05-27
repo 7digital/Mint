@@ -1,0 +1,4 @@
+require 'mint'
+require 'optparse'
+
+puts "Welcome"

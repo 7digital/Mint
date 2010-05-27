@@ -16,7 +16,8 @@ Gem::Specification.new do |s|
 		File.dirname(__FILE__) + '/lib/chubby_rain.rb',
 		File.dirname(__FILE__) + '/lib/dependency_report_tasks.rb',
 		File.dirname(__FILE__) + '/lib/io/process_result.rb',
-		File.dirname(__FILE__) + '/bin/chubbyrain.exe'
+		File.dirname(__FILE__) + '/bin/chubbyrain.exe'.
+		File.dirname(__FILE__) + '/bin/mint'
 	]
 	s.rubyforge_project = ''
 end
