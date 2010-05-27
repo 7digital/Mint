@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
 	s.name      = 'mint'
-	s.version   = "0.0.2"
+	s.version   = "0.0.3"
 	s.has_rdoc  = false
 	s.required_ruby_version = ">= 1.8.6"
 	s.platform  = "ruby"
@@ -16,8 +16,9 @@ Gem::Specification.new do |s|
 		File.dirname(__FILE__) + '/lib/chubby_rain.rb',
 		File.dirname(__FILE__) + '/lib/dependency_report_tasks.rb',
 		File.dirname(__FILE__) + '/lib/io/process_result.rb',
-		File.dirname(__FILE__) + '/bin/chubbyrain.exe'.
+		File.dirname(__FILE__) + '/bin/chubbyrain.exe',
 		File.dirname(__FILE__) + '/bin/mint'
 	]
 	s.rubyforge_project = ''
+	s.executables = ["mint"]
 end
